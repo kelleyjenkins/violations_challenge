@@ -15,4 +15,21 @@ class ViolationsFileTest < Minitest::Test
     refute file.violations.empty?
   end
 
+  def test_it_can_count_violations
+    file= ViolationsFile.new
+
+    file.load_file
+
+    assert_equal 545, file.violations.count
+  end
+
+  def test_it_can_find_earliest_violation_date
+    file= ViolationsFile.new
+
+    file.load_file
+    binding.pry
+
+    assert_equal "1/3/12 0:00", file.violations.date_of_earliest_violation
+  end
+
 end

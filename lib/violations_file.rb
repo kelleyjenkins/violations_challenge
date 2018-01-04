@@ -3,7 +3,7 @@ require 'pry'
 require './lib/violations'
 
 class ViolationsFile
-  attr_reader :violations 
+  attr_reader :violations
 
   def initialize
     @violations = []
@@ -15,5 +15,11 @@ class ViolationsFile
     end
   end
 
+  def count
+    @violations.count
+  end
 
+  def date_of_earliest_violation
+    @violations.sort_by {|violation| violation.violation_type}.each do |
+  end
 end
