@@ -1,8 +1,6 @@
-require "csv"
-require 'pry'
-
 class Violations
 
-
-
+  def initialize(row)
+  end
+  
 end

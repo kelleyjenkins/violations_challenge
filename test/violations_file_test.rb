@@ -1,11 +1,12 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'csv'
+require './lib/violations_file.rb'
 
-class ViolationsTest < Minitest::Test
+class ViolationsFileTest < Minitest::Test
+
 
   def test_it_loads_file
-    file = Violations.new
+    file = ViolationsFile.new
 
     assert file.violations.empty?
 
