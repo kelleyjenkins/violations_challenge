@@ -7,6 +7,7 @@ class ViolationsFile
 
   def initialize
     @violations = []
+
   end
 
   def load_file(file = "Violations-2012.csv")
@@ -20,6 +21,8 @@ class ViolationsFile
   end
 
   def date_of_earliest_violation
-    @violations.sort_by {|violation| violation.violation_type}.each do |
+    date = violations.order_by {|violation| violation.violation_date}
+    binding.pry
+    date.first.violation_date
   end
 end
